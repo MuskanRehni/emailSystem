@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compose Email</title>
+  <!-- Link to the external CSS for styling -->
+  <link rel="stylesheet" href="/styl.css">
+  <!-- Font Awesome for pencil icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  <!-- Main Container -->
+  <div class="main-container">
+
+    <!-- Sidebar (Left) -->
+    <div class="sidebar">
+      <h2>MEmail</h2>
+      <ul>
+        <li><a href="/">Inbox</a></li>
+        <li><a href="/sent">Sent</a></li>
+        <li><a href="/compose">Compose</a></li>
+      </ul>
+    </div>
+
+    <!-- Email Content Area (Right) -->
+    <div class="email-content">
+      <h1>Compose Email</h1>
+      <form action="/compose" method="POST">
+        <input type="email" name="receiver" placeholder="Recipient" required />
+        <input type="text" name="subject" placeholder="Subject" required />
+        <textarea name="content" placeholder="Write your message here..." required></textarea>
+        <button type="submit">
+          <i class="fas fa-pencil-alt"></i> Send
+        </button>
+      </form>
+      <a href="/">Back to Inbox</a>
+    </div>
+    
+  </div>
+
+</body>
+</html>

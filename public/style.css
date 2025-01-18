@@ -1,0 +1,125 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #2e3b4e, #1c1e26); /* Dark background gradient */
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Main container for both sidebar and email content */
+  .main-container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 90%;
+    background-color: #1e232f; /* Dark background for the main container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    width: 250px;
+    background-color: #2f3136; /* Darker background for sidebar */
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  
+  .sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+  }
+  
+  .sidebar ul li {
+    margin: 15px 0;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .sidebar ul li a:hover {
+    background-color: #ff9f00; /* Bright hover effect for links */
+    color: black;
+  }
+  
+  /* Main email content area */
+  .email-content {
+    flex-grow: 1;
+    padding: 20px;
+    color: #ddd; /* Light color for content text */
+  }
+  
+  .email-content h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ff9f00; /* Bright color for headings */
+  }
+  
+  /* Styling for email list */
+  .email-list {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  .email-item {
+    background-color: #2a2d39; /* Dark background for email items */
+    border: 1px solid #444; /* Light border for email items */
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .email-item:hover {
+    background-color: #3a3f47; /* Darker shade for hover effect */
+  }
+  
+  /* Email details styling */
+  .email-details {
+    font-size: 16px;
+  }
+  
+  .email-details strong {
+    color: #ff9f00; /* Bright color for email details labels */
+  }
+  
+  /* Links inside emails */
+  .email-item a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .email-item a:hover {
+    text-decoration: underline;
+    color: #ff9f00; /* Highlighted link color on hover */
+  }
+  
+  /* Add a smooth scrolling effect */
+  html {
+    scroll-behavior: smooth;
+  }
+  

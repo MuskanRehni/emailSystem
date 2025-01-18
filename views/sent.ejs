@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sent Emails</title>
+  <!-- Link to the styles.css inside the public folder -->
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- Main Container -->
+  <div class="main-container">
+
+    <!-- Sidebar (Left) -->
+    <div class="sidebar">
+      <h2>MEmail</h2>
+      <ul>
+        <li><a href="/">Inbox</a></li>
+        <li><a href="/sent">Sent</a></li>
+        <li><a href="/compose">Compose</a></li>
+      </ul>
+    </div>
+
+    <!-- Email Display Area (Right) -->
+    <div class="email-content">
+      <h1>Sent Emails</h1>
+      
+      <div class="email-list">
+        <% emails.forEach(email => { %>
+          <div class="email-item">
+            <div class="email-details">
+              <strong>To:</strong> <%= email.receiver %><br>
+              <strong>Subject:</strong> <%= email.subject %><br>
+              <strong>Sent:</strong> <%= email.timestamp.toLocaleString() %>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+
+    </div>
+    
+  </div>
+
+</body>
+</html>

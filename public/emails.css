@@ -1,0 +1,127 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #2e3b4e, #1c1e26); /* Dark background gradient */
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Main container for both sidebar and email content */
+  .main-container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 90%;
+    background-color: #1e232f; /* Dark background for the main container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  /* Sidebar styling */
+  .sidebar {
+    width: 250px;
+    background-color: #2f3136; /* Dark background for sidebar */
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  
+  .sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+  }
+  
+  .sidebar ul li {
+    margin: 15px 0;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .sidebar ul li a:hover {
+    background-color: #ff9f00; /* Bright hover effect for the links */
+    color: black;
+  }
+  
+  /* Main email content area */
+  .email-content {
+    flex-grow: 1;
+    padding: 20px;
+    color: #ddd; /* Light color for content text */
+  }
+  
+  .email-card {
+    background-color: #2a2d39; /* Dark background for email card */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .email-card h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ff9f00; /* Bright color for the title */
+  }
+  
+  .email-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .email-info strong {
+    color: #ff9f00; /* Bright color for labels like From, To, Subject */
+  }
+  
+  .email-message {
+    background-color: #333; /* Dark background for message */
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    margin-top: 20px;
+  }
+  
+  .email-message p {
+    font-size: 16px;
+    color: #ddd; /* Light color for message text */
+  }
+  
+  .back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #ff9f00; /* Bright yellow for the back link */
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: 1px solid #ff9f00;
+    border-radius: 5px;
+  }
+  
+  .back-link:hover {
+    background-color: #ff9f00; /* Bright yellow background on hover */
+    color: black;
+    text-decoration: none;
+  }
+  

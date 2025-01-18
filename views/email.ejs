@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Details</title>
+  <!-- Link to the external CSS for styling -->
+  <link rel="stylesheet" href="/emails.css">
+</head>
+<body>
+
+  <!-- Main Container -->
+  <div class="main-container">
+
+    <!-- Sidebar (Left) -->
+    <div class="sidebar">
+      <h2>MEmail</h2>
+      <ul>
+        <li><a href="/">Inbox</a></li>
+        <li><a href="/sent">Sent</a></li>
+        <li><a href="/compose">Compose</a></li>
+      </ul>
+    </div>
+
+    <!-- Email Content Area (Right) -->
+    <div class="email-content">
+      <div class="email-card">
+        <h1>Email Details</h1>
+        <div class="email-info">
+          <p><strong>From:</strong> <%= email.sender %></p>
+          <p><strong>To:</strong> <%= email.receiver %></p>
+          <p><strong>Subject:</strong> <%= email.subject %></p>
+          <p><strong>Message:</strong></p>
+          <div class="email-message">
+            <p><%= email.content %></p>
+          </div>
+        </div>
+        <a href="/" class="back-link">Back to Inbox</a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
