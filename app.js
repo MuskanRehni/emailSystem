@@ -3,6 +3,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const path = require('path');
+
 const connectDB = require('./config/db');
 
 // Import Routes
@@ -18,12 +19,16 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 
+
+
 // Connect to Database
 connectDB();
 
 // Routes
 app.use('/', authRoutes);
 app.use('/', emailRoutes);
+
+app.use('/uploads',express.static(path.join(__dirname,'uploads')));
 
 // Start Server
 app.listen(PORT, () => {

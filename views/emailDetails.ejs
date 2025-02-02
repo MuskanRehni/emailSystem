@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Details</title>
+  <link rel="stylesheet" href="/details.css">
+</head>
+<body>
+
+  <div class="main-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h2>MEmail</h2>
+      <ul>
+        <li><a href="/">Inbox</a></li>
+        <li><a href="/sent">Sent</a></li>
+        <li><a href="/compose">Compose</a></li>
+      </ul>
+    </div>
+
+    <!-- Email Content Area -->
+    <div class="email-content">
+      <h1>Email Details</h1>
+      
+      <div class="email-details-box">
+        <p><strong>To:</strong> <%= email.receiver %></p>
+        <p><strong>From:</strong> <%= email.sender %></p>
+        <p><strong>Subject:</strong> <%= email.subject %></p>
+        
+       
+
+        <hr>
+        <p><strong>Message:</strong></p>
+        <p><%= email.content %></p>
+
+        <!-- ✅ Show Attachment if Available -->
+        <% if (email.attachment) { %>
+          <p><strong>Attachment:</strong> 
+            <iframe src="/uploads/<%= email.attachment %>" width="600" height="400" frameborder="0"></iframe>
+            <a href="/uploads/<%= email.attachment %>" download>Download pdf</a>
+          </p>
+        <% } %>
+
+        <!-- Back Button -->
+        <a href="/sent"><button>Back to Sent Emails</button></a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -34,6 +34,12 @@
               <strong>Subject:</strong> <%= email.subject %><br>
               <strong>Sent:</strong> <%= email.timestamp.toLocaleString() %>
             </div>
+            <!-- ✅ View Button -->
+            <a href="/sent/<%= email._id %>">
+              <button class="view-btn">View</button>
+            </a>
+
+
           </div>
         <% }); %>
       </div>

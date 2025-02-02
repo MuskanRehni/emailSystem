@@ -1,8 +1,31 @@
 const express = require('express');
+const router = express.Router();
+
 const Email = require('../models/Email');
 const authenticate = require('../middleware/authenticate');
+const multer=require('multer');
+const path=require('path');
 
-const router = express.Router();
+// ✅ Multer Storage Configuration
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/'); // Folder to store uploaded files
+  },
+  filename: (req, file, cb) => {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    cb(null, uniqueSuffix + path.extname(file.originalname)); // Save file with unique name
+  }
+});
+
+const upload = multer({ storage: storage });
+
+
+
+
+
+
+
 
 // Inbox Page
 router.get('/', authenticate, async (req, res) => {
@@ -16,18 +39,46 @@ router.get('/sent', authenticate, async (req, res) => {
   res.render('sent', { emails });
 });
 
+
+// Route to fetch details of a specific sent email
+// ✅ Route to View Email Details
+router.get('/sent/:id', authenticate, async (req, res) => {
+  try {
+    const email = await Email.findById(req.params.id); 
+    if (!email) {
+      return res.status(404).send('Email not found');
+    }
+    res.render('emailDetails', { email }); // Render email details page
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Server Error');
+  }
+});
+
+
 // Compose Page
 router.get('/compose', authenticate, (req, res) => {
   res.render('compose');
 });
 
-// Compose Logic
-router.post('/compose', authenticate, async (req, res) => {
+// Compose Logic with file upload..
+router.post('/compose', authenticate, upload.single('attachment'), async (req, res) => {
+  console.log("enter");
   const { receiver, subject, content } = req.body;
+  console.log(receiver, subject, content);
+
   const sender = req.user.email;
+  console.log(sender);
 
   try {
-    const newEmail = new Email({ sender, receiver, subject, content });
+    const newEmail = new Email({
+      sender,
+      receiver,
+      subject,
+      content,
+      attachment: req.file ? req.file.filename : null  // ✅ Save attachment filename if uploaded
+    });
+
     await newEmail.save();
     res.redirect('/');
   } catch (err) {
@@ -35,6 +86,8 @@ router.post('/compose', authenticate, async (req, res) => {
     res.status(500).send('Error sending email');
   }
 });
+res.render('/sent');
+
 
 // View Individual Email
 router.get('/email/:id', authenticate, async (req, res) => {
