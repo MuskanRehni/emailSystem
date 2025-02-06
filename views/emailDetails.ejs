@@ -37,7 +37,7 @@
         <!-- ✅ Show Attachment if Available -->
         <% if (email.attachment) { %>
           <p><strong>Attachment:</strong> 
-            <iframe src="/uploads/<%= email.attachment %>" width="600" height="400" frameborder="0"></iframe>
+            <iframe src="/uploads/<%= email.attachment %>" width="300" height="200" frameborder="0"></iframe>
             <a href="/uploads/<%= email.attachment %>" download>Download pdf</a>
           </p>
         <% } %>

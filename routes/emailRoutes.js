@@ -86,7 +86,10 @@ router.post('/compose', authenticate, upload.single('attachment'), async (req, r
     res.status(500).send('Error sending email');
   }
 });
-res.render('/sent');
+// Route for '/sent' page
+router.get('/sent', (req, res) => {
+  res.render('sent'); // Render a view called 'sent'
+});
 
 
 // View Individual Email
