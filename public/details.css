@@ -1,120 +1,134 @@
 /* General Reset */
+/* Global Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #2e3b4e, #1c1e26);
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+/* Main Container */
+.main-container {
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  height: 90%;
+  background-color: #1e232f;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 200px;
+  background-color: #2f3136;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: width 0.3s ease;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.sidebar ul li a {
+  display: block;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  background-color: #ff9f00;
+  color: black;
+}
+
+/* Email Content Styling */
+.email-content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.email-content h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #ff9f00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    height: auto;
   }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #2e3b4e, #1c1e26);
-    color: white;
-    height: 100vh;
+
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .sidebar ul {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+  }
+
+  .sidebar ul li {
+    margin: 0;
+  }
+
+  .sidebar ul li a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 10px;
+  }
+
+  .sidebar ul {
+    flex-direction: column;
     align-items: center;
   }
-  
-  .main-container {
-    display: flex;
-    width: 90%;
-    max-width: 1200px;
-    background-color: #1e232f;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
+
+  .sidebar ul li {
+    margin-bottom: 8px;
   }
-  
-  /* Sidebar */
-  .sidebar {
-    background-color: #2a2d39;
-    padding: 20px;
-    width: 200px;
-    text-align: center;
-    border-right: 2px solid #444;
+
+  .sidebar ul li a {
+    font-size: 14px;
+    padding: 6px 10px;
   }
-  
-  .sidebar h2 {
-    color: #ff9f00;
-    margin-bottom: 20px;
-  }
-  
-  .sidebar ul {
-    list-style: none;
-  }
-  
-  .sidebar li {
-    margin: 15px 0;
-  }
-  
-  .sidebar a {
-    color: #ff9f00;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-  .sidebar a:hover {
-    color: #e68900;
-    text-decoration: underline;
-  }
-  
-  /* Email Content Area */
-  .email-content {
-    flex: 1;
-    padding: 30px;
-    color: white;
-  }
-  
-  .email-content h1 {
-    font-size: 2em;
-    color: #ff9f00;
-    margin-bottom: 20px;
-  }
-  
-  .email-details-box {
-    background-color: #2e3b4e;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  }
-  
-  .email-details-box p {
-    margin: 10px 0;
-    font-size: 16px;
-  }
-  
-  strong {
-    color: #ff9f00;
-  }
-  
-  hr {
-    border: 1px solid #444;
-    margin: 15px 0;
-  }
-  
-  /* Buttons */
-  button {
-    background-color: #ff9f00;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #e68900;
-  }
-  
-  /* Attachment Link */
-  a {
-    color: #ff9f00;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
+}

@@ -1,141 +1,213 @@
 /* Reset some default styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #2e3b4e, #1c1e26); /* Dark background gradient */
-    color: white;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Main container for both sidebar and email content */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #2e3b4e, #1c1e26);
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main container for both sidebar and email content */
+.main-container {
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  height: 90%;
+  background-color: #1e232f;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 250px;
+  background-color: #2f3136;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.sidebar ul {
+  list-style-type: none;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.sidebar ul li a:hover {
+  background-color: #ff9f00;
+  color: black;
+}
+
+/* Main email content area */
+.email-content {
+  flex-grow: 1;
+  padding: 20px;
+  color: #ddd;
+}
+
+.email-content h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #ff9f00;
+}
+
+/* Styling the form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #2a2d39;
+  color: white;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #aaa;
+}
+
+textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+/* Button styling */
+button {
+  background-color: #2f4f85;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1e3d73;
+}
+
+/* Pencil icon inside button */
+button i {
+  font-size: 18px;
+}
+
+/* Link styling */
+a {
+  color: #ff9f00;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
   .main-container {
-    display: flex;
-    width: 90%;
-    max-width: 1200px;
-    height: 90%;
-    background-color: #1e232f; /* Dark background for the main container */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+      flex-direction: column;
+      height: auto;
+      width: 95%;
   }
   
-  /* Sidebar styling */
   .sidebar {
-    width: 250px;
-    background-color: #2f3136; /* Dark background for sidebar */
-    color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-  }
-  
-  .sidebar h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #fff;
+      width: 100%;
+      text-align: center;
+      border-radius: 8px 8px 0 0;
   }
   
   .sidebar ul {
-    list-style-type: none;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
   }
   
   .sidebar ul li {
-    margin: 15px 0;
+      margin: 0;
   }
-  
+
   .sidebar ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-    padding: 10px;
-    border-radius: 5px;
+      padding: 8px 15px;
+      font-size: 16px;
   }
   
-  .sidebar ul li a:hover {
-    background-color: #ff9f00; /* Bright hover effect for the links */
-    color: black;
-  }
-  
-  /* Main email content area */
   .email-content {
-    flex-grow: 1;
-    padding: 20px;
-    color: #ddd; /* Light color for content text */
+      padding: 15px;
   }
-  
+
   .email-content h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    color: #ff9f00; /* Bright color for headings */
+      font-size: 1.8em;
   }
-  
-  /* Styling the form */
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
+
   input, textarea {
-    padding: 12px;
-    border: 1px solid #444; /* Light border for inputs */
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: #2a2d39; /* Dark background for form inputs */
-    color: white;
+      font-size: 14px;
+      padding: 10px;
   }
-  
-  input::placeholder, textarea::placeholder {
-    color: #aaa; /* Light color for placeholder text */
-  }
-  
-  textarea {
-    height: 150px;
-    resize: vertical;
-  }
-  
-  /* Button styling */
+
   button {
-    background-color: #2f4f85; /* Dark blue for the button */
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+      font-size: 14px;
+      padding: 10px 15px;
   }
-  
-  button:hover {
-    background-color: #1e3d73; /* Darker blue shade on hover */
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar ul {
+      flex-direction: column;
+      align-items: center;
   }
-  
-  /* Pencil icon inside button */
-  button i {
-    font-size: 18px;
+
+  .sidebar ul li {
+      margin: 10px 0;
   }
-  
-  /* Link styling */
-  a {
-    color: #ff9f00; /* Bright yellow color for the link */
-    text-decoration: none;
-    margin-top: 20px;
+
+  .email-content h1 {
+      font-size: 1.5em;
   }
-  
-  a:hover {
-    text-decoration: underline;
+
+  input, textarea {
+      font-size: 14px;
+      padding: 8px;
   }
-  
+
+  button {
+      font-size: 14px;
+      padding: 8px 12px;
+  }
+}
